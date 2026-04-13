@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stranger Battle Navbar</title>
+<style>
+
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:#0b0b12;
+  color:white;
+}
+
+/* NAVBAR */
+.navbar{
+  position:relative;
+  height:110px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 50px;
+  background:linear-gradient(90deg,#0f0f1a,#1a1a2e,#0f0f1a);
+  overflow:hidden;
+  border-bottom:2px solid #ff0033;
+}
+
+.logo{
+  font-size:24px;
+  font-weight:bold;
+  letter-spacing:2px;
+  color:#ff3355;
+}
+
+.menu a{
+  color:white;
+  text-decoration:none;
+  margin:0 18px;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.menu a:hover{
+  color:#ff3355;
+}
+
+/* BATTLE AREA */
+.battle-scene{
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  bottom:0;
+  width:500px;
+  height:100%;
+  pointer-events:none;
+}
+
+/* Eleven */
+.eleven{
+  position:absolute;
+  bottom:10px;
+  left:40px;
+  font-size:40px;
+  animation:power 1.5s infinite alternate;
+}
+
+/* Vecna */
+.vecna{
+  position:absolute;
+  bottom:10px;
+  right:40px;
+  font-size:42px;
+  animation:vecnaMove 2s infinite alternate;
+}
+
+/* Telekinesis glow */
+.energy{
+  position:absolute;
+  left:50%;
+  bottom:40px;
+  width:120px;
+  height:6px;
+  background:#ff3355;
+  transform:translateX(-50%);
+  border-radius:10px;
+  box-shadow:0 0 20px #ff0033,0 0 40px #ff0033;
+  animation:energyPulse 1s infinite alternate;
+}
+
+/* Animations */
+@keyframes power{
+  from{ transform:translateY(0px);} 
+  to{ transform:translateY(-6px);} 
+}
+
+@keyframes vecnaMove{
+  from{ transform:translateX(0);} 
+  to{ transform:translateX(-8px);} 
+}
+
+@keyframes energyPulse{
+  from{ opacity:0.5; }
+  to{ opacity:1; }
+}
+
+/* Lightning effect */
+.lightning{
+  position:absolute;
+  width:2px;
+  height:60px;
+  background:#ff0033;
+  left:50%;
+  bottom:30px;
+  transform:translateX(-50%);
+  opacity:0;
+  animation:lightning 2s infinite;
+}
+
+@keyframes lightning{
+  0%{opacity:0}
+  40%{opacity:1}
+  45%{opacity:0}
+  80%{opacity:1}
+  100%{opacity:0}
+}
+
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+
+<div class="logo">UpsideNav</div>
+
+<div class="menu">
+<a href="#">Home</a>
+<a href="#">About</a>
+<a href="#">Episodes</a>
+<a href="#">Gallery</a>
+<a href="#">Contact</a>
+</div>
+
+<!-- Battle Animation -->
+<div class="battle-scene">
+<div class="eleven">🧒</div>
+<div class="vecna">👹</div>
+<div class="energy"></div>
+<div class="lightning"></div>
+</div>
+
+</nav>
+
+</body>
+</html>
